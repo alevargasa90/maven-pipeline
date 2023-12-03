@@ -30,7 +30,7 @@ public class App
     	
     	return "Hello from the pipeline and Git " + fibo;
     }
-	private int calculateFibonacci(int n) {
+	static int calculateFibonacci(int n) {
 		// TODO Auto-generated method stub
 		 if (n < 0) {
              throw new IllegalArgumentException("n must be a positive integer.");

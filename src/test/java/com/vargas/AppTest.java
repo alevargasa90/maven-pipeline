@@ -1,5 +1,6 @@
 package com.vargas;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -17,4 +18,13 @@ public class AppTest
     {
         assertTrue( true );
     }
+    
+    @Test
+    public void fibonacciOf10Is55() {
+
+        assertEquals(55,App.calculateFibonacci(10));
+
+    }
+    
+    
 }
