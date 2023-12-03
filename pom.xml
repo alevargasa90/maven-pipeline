@@ -122,7 +122,14 @@
 				    <JAR_FILE>target/maven-pipeline-1.0.jar</JAR_FILE>
 				</buildArgs>
 			    </configuration>
-			</plugin>
+		</plugin>
+			
+			<plugin>
+            	<groupId>org.apache.maven.plugins</groupId>
+            	<artifactId>maven-surefire-plugin</artifactId>
+            	<version>3.2.2</version>
+            <!-- Other configurations, if needed -->
+        </plugin>
         
       </plugins>
     </pluginManagement>
