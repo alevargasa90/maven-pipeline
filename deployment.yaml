@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maven-pipeline-deployment
+  labels:
+    app: maven-pipeline
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: maven-pipeline
+  template:
+    metadata:
+      labels:
+        app: maven-pipeline
+    spec:
+      containers:
+      - name: maven-pipeline
+        image: your-docker-image:latest  # Replace with the name/tag of your Docker image
+        ports:
+        - containerPort: 8080  
