@@ -28,7 +28,7 @@ public class App
     	 int fibo = calculateFibonacci(n);
            
     	
-    	return "Hello from the pipeline and Git hehe " + fibo;
+    	return "Hello from the pipeline and Git  " + fibo;
     }
 	static int calculateFibonacci(int n) {
 		// TODO Auto-generated method stub
