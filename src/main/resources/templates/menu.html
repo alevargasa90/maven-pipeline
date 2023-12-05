@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci Calculator</title>
+</head>
+<body>
+
+<form action="/calculateFibonacci" method="post">
+    <label for="number">Enter a number for Fibonacci calculation:</label>
+    <input type="text" id="number" name="n" value="8" />
+    <button type="submit">Calculate Fibonacci</button>
+</form>
+
+<div th:if="${result}">
+    <p th:text="${result}"></p>
+</div>
+
+</body>
+</html>
