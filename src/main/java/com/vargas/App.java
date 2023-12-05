@@ -23,8 +23,15 @@ public class App {
 
     @PostMapping("/calculateFibonacci")
     public String calculateFibonacci(@RequestParam(value = "n", defaultValue = "0") int n, Model model) {
-        int fibo = calculateFibonacciRecursive(n);
+        try {
+    	
+    	int fibo = calculateFibonacciRecursive(n);
         model.addAttribute("result", "The Fibonacci sequence for n=" + n + " is " + fibo);
+        }catch (IllegalArgumentException e) {
+	        System.out.println("Error: " + e.getMessage());
+	        
+	    }
+        
         return "menu";
     }
 
