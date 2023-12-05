@@ -27,8 +27,8 @@ public class App {
     	
     	int fibo = calculateFibonacciRecursive(n);
         model.addAttribute("result", "The Fibonacci sequence for n=" + n + " is " + fibo);
-        }catch (IllegalArgumentException e) {
-	        System.out.println("Error: " + e.getMessage());
+        }	catch (IllegalArgumentException e) {
+	        	System.out.println("Error: " + e.getMessage());
 	        
 	    }
         
