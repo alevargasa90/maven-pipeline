@@ -1,21 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: maven-pipeline-deployment
-  labels:
-    app: maven-pipeline
+   name: bb-demo
+   namespace: default
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: maven-pipeline
-  template:
-    metadata:
-      labels:
-        app: maven-pipeline
-    spec:
-      containers:
-      - name: maven-pipeline
-        image: your-docker-image:latest  # Replace with the name/tag of your Docker image
-        ports:
-        - containerPort: 8080  
+   replicas:2 
+   selector:
+      matchLabels:
+         bb: web
+   template:
+      metadata:
+         labels:
+            bb: web
+      spec:
+         containers:
+            - name: spring-boot-container
+              image: alevargasa/maven-pipeline:latest
+              imagePullPolicy: IfNotPresent
+              ports:
+              	- containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+   name: bb-entrypoint
+   namespace: default
+spec:
+   type: NodePort
+   selector:
+      bb: web
+   ports:
+      - port: 8888
+        targetPort: 8888
+        nodePort: 8889
